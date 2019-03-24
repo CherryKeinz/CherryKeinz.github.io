@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[hexo换机前后的需要做的]]></title>
     <url>%2F2019%2F03%2F24%2Fhexo%E6%8D%A2%E7%94%B5%E8%84%91%E8%A6%81%E5%81%9A%E7%9A%84%2F</url>
-    <content type="text"><![CDATA[换机之前的步骤 克隆项目到本地 1git clone 项目 进入项目文件夹，删掉除.git外的所有。 把原来hexo内所有内容复制过来。 创建分支 1git checkout -b hexo 添加add、commit、推送，操作类似普通项目 123git add --allgit commit -m &quot;&quot;git push --set-upstream origin hexo 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲123git add . git commit -m &quot;注释&quot; git push origin hexo 换机之后的步骤 clone到本地 1git clone -b hexo git@github.com:heimu24/heimu24.github.io.git 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲123git add . git commit -m &quot;注释&quot; git push origin hexo 参考文献： https://blog.csdn.net/heimu24/article/details/81210640]]></content>
+    <content type="text"><![CDATA[换机之前的步骤 克隆项目到本地 1git clone 项目 进入项目文件夹，删掉除.git外的所有。 把原来hexo内所有内容复制过来。 创建分支 1git checkout -b hexo 添加add、commit、推送，操作类似普通项目 123git add --allgit commit -m &quot;&quot;git push --set-upstream origin hexo 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 换机之后的步骤 clone到本地 1git clone -b hexo git@github.com:heimu24/heimu24.github.io.git 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 参考文献： https://blog.csdn.net/heimu24/article/details/81210640]]></content>
   </entry>
   <entry>
     <title><![CDATA[搭建ShadowSocks]]></title>
