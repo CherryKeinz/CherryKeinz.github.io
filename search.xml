@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo换电脑要做的]]></title>
+    <url>%2F2019%2F03%2F24%2Fhexo%E6%8D%A2%E7%94%B5%E8%84%91%E8%A6%81%E5%81%9A%E7%9A%84%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[搭建ShadowSocks]]></title>
+    <url>%2F2019%2F03%2F24%2F%E6%90%AD%E5%BB%BAShadowSocks%2F</url>
+    <content type="text"><![CDATA[搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html ss的配制与使用 检查Python版本 1$ python –version 安装m2crypto和python-setuptools 1$ yum install m2crypto python-setuptools 安装pip 1yum -y install python-pip 或者（没试过）1$ easy_install pip 安装ss 1$ pip shadowsocks 配置服务器参数 1$ vi /etc/shadowsocks.json 12345678910&#123; &quot;server&quot;:&quot;my_server_ip&quot;, //服务器的IP地址 &quot;server_port&quot;:7711, //服务器的端口 &quot;local_address&quot;: &quot;127.0.0.1&quot;, //本机IP地址 &quot;local_port&quot;:1080, //本机端口 &quot;password&quot;:&quot;mypassword&quot;, //自己设定的密码 &quot;timeout&quot;:300, //超出时间 &quot;method&quot;:&quot;aes-256-cfb&quot;, //加密方法，推荐使用&quot;aes-256-cfb&quot; &quot;fast_open&quot;: false //true 或 false&#125;&#125; 若是多用户模式，将server_port和password合并为port_password： 1234&quot;port_password&quot;: &#123; &quot;443&quot;: &quot; mypassword 1”, //对应端口设定不同的密码 &quot;8888&quot;: &quot; mypassword 2” &#125;, 安装gevent Gevent可以提高ss性能，由于gevent依赖于libevent和greenlet 123$ yum install -y libevent$ pip install greenlet$ pip install gevent 配置防火墙 为了提高系统的安全性，需要安装防火墙 1$ yum install firewalld 启动防火墙 1$ systemctl start firewalld 开启相应端口 12$ firewall-cmd --permanent --zone=public --add-port=443/tcp$ firewall-cmd –reload 查看修改ss服务器的端口密码 查看当前ss服务器所开放的端口 1ss -lntp | grep ssserver 查看当前ss服务器的密码，通过以下命令可见ss的配置文件，配置文件中自然有密码 1ps aux | grep ssserver 用cat查看下配置文件即可看见密码了，vim修改 1vim /etc/shadowsocks.json ss启动停止方法 启动，停止，重启，状态：1234567service shadowsocks startservice shadowsocks stopservice shadowsocks restartservice shadowsocks status 参考：https://github.com/easonhuang123/blog/issues/1https://blog.whsir.com/post-1045.html]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>ShadowSocks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据库其他知识]]></title>
     <url>%2F2019%2F03%2F24%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[数据库其他知识 其他知识delete truncate drop区别 区别 delete truncate drop 类型回滚 可回滚 不可回滚 不可回滚 删除内容 表结构还在，删除表全部或部分内容 表结构还在，删除全部内容 删除表，所有数据、索引、权限一并删除 删除速度 逐行删除，速度慢 速度快 速度快 存储过程预编译的sql语句，一次创建，多次使用。 优点 预编译，效率高。 存放在数据库，减少网络传输。 安全性高，需要一定权限。 一次创建可多次使用，提高开发效率。 视图从一个表或多个表导出的表，是虚表，不存具体数据。 主从复制将主数据库的DDL、DML操作记录到二进制文件（BINLOG），传输到从数据库，从数据库重新执行，使得从数据库数据和主数据库保持一致。 主从复制作用 主数据库故障可以切换到从数据库； 可以读写分离； 从数据库可以日志备份。 复制过程 主数据库更新数据完成前，将操作记录顺序记录到BINLOG； 从数据库开启一个I/O线程，该线程在主数据库打开一个普通连接，将读到的事件写入到中继日志，如果读取的进度跟上了master，就进入睡眠等待； 从数据库的SQL线程将读取中继日志，并顺序执行操作。 大表数据查询的优化 优化Schema，sql语句、索引。 加缓存，memcached，redis 主从复制，读写分离 垂直拆分，分布式系统 水平切分，要选择合适的sharding key，为了好的查询效率，表结构也要改变，应用也需要改变，sql中尽量带sharding key，将数据定位到限定的表去查，而不是全部的表。 参考文献：https://www.weiweiblog.cn/databases/]]></content>
@@ -46,8 +62,8 @@
       </categories>
       <tags>
         <tag>数据库</tag>
-        <tag>索引</tag>
         <tag>面试</tag>
+        <tag>索引</tag>
       </tags>
   </entry>
   <entry>
@@ -85,17 +101,6 @@
       </categories>
       <tags>
         <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[搭建ShadowSocks]]></title>
-    <url>%2F2018%2F06%2F26%2F%E6%90%AD%E5%BB%BAShadowSocks%2F</url>
-    <content type="text"><![CDATA[搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html ss的配制与使用 检查Python版本 1$ python –version 安装m2crypto和python-setuptools 1$ yum install m2crypto python-setuptools 安装pip 1yum -y install python-pip 或者（没试过）1$ easy_install pip 安装ss 1$ pip shadowsocks 配置服务器参数 1$ vi /etc/shadowsocks.json 12345678910&#123; &quot;server&quot;:&quot;my_server_ip&quot;, //服务器的IP地址 &quot;server_port&quot;:7711, //服务器的端口 &quot;local_address&quot;: &quot;127.0.0.1&quot;, //本机IP地址 &quot;local_port&quot;:1080, //本机端口 &quot;password&quot;:&quot;mypassword&quot;, //自己设定的密码 &quot;timeout&quot;:300, //超出时间 &quot;method&quot;:&quot;aes-256-cfb&quot;, //加密方法，推荐使用&quot;aes-256-cfb&quot; &quot;fast_open&quot;: false //true 或 false&#125;&#125; 若是多用户模式，将server_port和password合并为port_password： 1234&quot;port_password&quot;: &#123; &quot;443&quot;: &quot; mypassword 1”, //对应端口设定不同的密码 &quot;8888&quot;: &quot; mypassword 2” &#125;, 安装gevent Gevent可以提高ss性能，由于gevent依赖于libevent和greenlet 123$ yum install -y libevent$ pip install greenlet$ pip install gevent 配置防火墙 为了提高系统的安全性，需要安装防火墙 1$ yum install firewalld 启动防火墙 1$ systemctl start firewalld 开启相应端口 12$ firewall-cmd --permanent --zone=public --add-port=443/tcp$ firewall-cmd –reload 查看修改ss服务器的端口密码 查看当前ss服务器所开放的端口 1ss -lntp | grep ssserver 查看当前ss服务器的密码，通过以下命令可见ss的配置文件，配置文件中自然有密码 1ps aux | grep ssserver 用cat查看下配置文件即可看见密码了，vim修改 1vim /etc/shadowsocks.json ss启动停止方法 启动，停止，重启，状态：1234567service shadowsocks startservice shadowsocks stopservice shadowsocks restartservice shadowsocks status 参考：https://github.com/easonhuang123/blog/issues/1https://blog.whsir.com/post-1045.html]]></content>
-      <categories>
-        <category>科学上网</category>
-      </categories>
-      <tags>
-        <tag>ShadowSocks</tag>
       </tags>
   </entry>
   <entry>
