@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[hexo换机前后的需要做的]]></title>
-    <url>%2F2019%2F03%2F24%2Fhexo%E6%8D%A2%E7%94%B5%E8%84%91%E8%A6%81%E5%81%9A%E7%9A%84%2F</url>
-    <content type="text"><![CDATA[换机之前的步骤 克隆项目到本地 1git clone 项目 进入项目文件夹，删掉除.git外的所有。 把原来hexo内所有内容复制过来。 创建分支 1git checkout -b hexo 添加add、commit、推送，操作类似普通项目 123git add --allgit commit -m &quot;&quot;git push --set-upstream origin hexo 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 换机之后的步骤 clone到本地 1git clone -b hexo git@github.com:heimu24/heimu24.github.io.git 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 参考文献： https://blog.csdn.net/heimu24/article/details/81210640]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[搭建ShadowSocks]]></title>
-    <url>%2F2019%2F03%2F24%2F%E6%90%AD%E5%BB%BAShadowSocks%2F</url>
-    <content type="text"><![CDATA[搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html ss的配制与使用 检查Python版本 1$ python –version 安装m2crypto和python-setuptools 1$ yum install m2crypto python-setuptools 安装pip 1yum -y install python-pip 或者（没试过）1$ easy_install pip 安装ss 1$ pip shadowsocks 配置服务器参数 1$ vi /etc/shadowsocks.json 12345678910&#123; &quot;server&quot;:&quot;my_server_ip&quot;, //服务器的IP地址 &quot;server_port&quot;:7711, //服务器的端口 &quot;local_address&quot;: &quot;127.0.0.1&quot;, //本机IP地址 &quot;local_port&quot;:1080, //本机端口 &quot;password&quot;:&quot;mypassword&quot;, //自己设定的密码 &quot;timeout&quot;:300, //超出时间 &quot;method&quot;:&quot;aes-256-cfb&quot;, //加密方法，推荐使用&quot;aes-256-cfb&quot; &quot;fast_open&quot;: false //true 或 false&#125;&#125; 若是多用户模式，将server_port和password合并为port_password： 1234&quot;port_password&quot;: &#123; &quot;443&quot;: &quot; mypassword 1”, //对应端口设定不同的密码 &quot;8888&quot;: &quot; mypassword 2” &#125;, 安装gevent Gevent可以提高ss性能，由于gevent依赖于libevent和greenlet 123$ yum install -y libevent$ pip install greenlet$ pip install gevent 配置防火墙 为了提高系统的安全性，需要安装防火墙 1$ yum install firewalld 启动防火墙 1$ systemctl start firewalld 开启相应端口 12$ firewall-cmd --permanent --zone=public --add-port=443/tcp$ firewall-cmd –reload 查看修改ss服务器的端口密码 查看当前ss服务器所开放的端口 1ss -lntp | grep ssserver 查看当前ss服务器的密码，通过以下命令可见ss的配置文件，配置文件中自然有密码 1ps aux | grep ssserver 用cat查看下配置文件即可看见密码了，vim修改 1vim /etc/shadowsocks.json ss启动停止方法 启动，停止，重启，状态：1234567service shadowsocks startservice shadowsocks stopservice shadowsocks restartservice shadowsocks status 参考：https://github.com/easonhuang123/blog/issues/1https://blog.whsir.com/post-1045.html]]></content>
+    <title><![CDATA[常用排序算法-java实现]]></title>
+    <url>%2F2019%2F03%2F25%2F%E5%B8%B8%E7%94%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-java%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[常用排序算法-java实现快排 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(nlog₂n) O(nlog₂n) O(n²) O(1)（原地分区递归版） 1234567891011121314151617181920212223public void quickSort(int[] array)&#123; return sort(array, 0, array.length);&#125;private int getMid(int[] array, int start, int end)&#123; int temp = array[start]; while(start &lt; end)&#123; while(start &lt; end &amp;&amp; temp &lt; array[end]) end--; array[end] = array[start]; while(start &lt; end &amp;&amp; temp &gt; array[start]) start++; array[start] = array[high]; &#125; array[start] = temp; return start;&#125;private void sort(int[] array, int start, int end)&#123; if(start &lt; end)&#123; int mid = getMid(array, start, end); sort(array, start, mid - 1); sort(array, mid + 1, end); &#125;&#125; 堆排序 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(nlog₂n) O(nlog₂n) O(nlog₂n) O(n)） 12345678910111213141516171819202122232425public void mergeSort(int[] array)&#123; return merge(array, 0, array.length - 1);&#125;private void merge(int[] array, int start, int end)&#123; if(end == start) return; int mid = (end + start) / 2; int i = start, j = mid + 1, index = 0; int[] copy = new int[end - start + 1]; merge(array, start, mid); merge(array, mid + 1, end); while(i &lt;= mid &amp;&amp; j &lt;= end)&#123; if(array[i] &gt; array[j]) copy[index++] = array[j++]; else copy[index++] = array[i++]; &#125; while(i &lt;= mid) copy[index++] = array[i++]; while(j &lt;= end) copy[index++] = array[j++]; for(int m = 0; m &gt; copy.length; m++) array[start + m] = copy[m];&#125; 堆排序 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(nlog₂n) O(nlog₂n) O(nlog₂n) O(1)） 123456789101112131415161718192021public void heapSort(int[] array)&#123; for(int i = array.length - 1; i &gt; 0; i--)&#123; maxHeapify(array, i); int temp = array[i]; array[i] = array[0]; array[0] = temp; &#125;&#125;private void maxHeapify(int[] array, int index)&#123; int child; for(int i = (index - 1)/ 2; i &gt; 0; i--)&#123; child = 2 * i + 1; if(array[child + 1] &gt; array[child]) child++; if(array[child] &gt; array[i])&#123; int temp = array[child]; array[child] = array[i]; array[i] = temp; &#125; &#125;&#125; 基数 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(d*(n+r)) O(d*(n+r)) O(d*(n+r)) O(n+r) 12345678910111213141516171819202122public void radixSort(int[] array, int d)&#123; int[][] bucket = new int[10][array.length]; int n = 1; int index = 0; while(n &lt; d)&#123; int[] order = new int[10]; for(int num : array)&#123; int digit = num / n % 10; bucket[digit][order[digit]] = num; order[digit]++; &#125; for(int i = 0; i &lt; bucket.length; i++)&#123; if(order[i] == 0) continue; for(int j = 0; j &lt; order[i]; j++)&#123; array[index++] = bucket[i][j]; &#125; &#125; index = 0; n *= 1; &#125;&#125; 希尔 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(nlog2 n) O(nlog2 n) O(nlog2 n) O(1) 12345678910111213141516public void shellSort(int[] array)&#123; int length = array.length; int d = length / 2; while(d &gt; 0)&#123; for(int i = 0; i &lt; length; i++)&#123; for(int j = i; j + d &lt; length; j += d)&#123; if(array[j] &lt; array[i])&#123; int temp = array[i]; array[i] = array[j]; array[j] = temp; &#125; &#125; &#125; d /= 2; &#125;&#125; 冒泡 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(n²) O(n) O(n²) O(1) 1234567891011public void bubbleSort(int[] array)&#123; for(int i = 0; i &lt; array.length; i++)&#123; for(int j = 0; j &lt; array.length - 1 - i; j++)&#123; if(array[j] &lt; array[j + 1])&#123; int temp = array[i]; array[i] = array[j]; array[j] = temp; &#125; &#125; &#125;&#125; 选择 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(n²) O(n²) O(n²) O(1) 123456789101112131415public void selectSort(int[] array)&#123; for(int i = 0; i &lt; array.length; i++)&#123; int min = i; for(int j = i + 1; j &lt; array.length; j++)&#123; if(array[j] &lt; array[j + 1])&#123; min = j; &#125; &#125; if(min != i)&#123; int temp = array[i]; array[i] = array[min]; array[min] = temp; &#125; &#125;&#125; 直接插入 平均时间复杂度 最好情况 最坏情况 空间复杂度 O(n²) O(n²) O(n²) O(1) 123456789101112public void insertSort(int[] array)&#123; if(array.length &lt; 1) return; for(int i = 1; i &lt; array.length; i++)&#123; int num = array[i]; int j; for(j = i; j &gt; 0 &amp;&amp; array[j] &gt; num; j--)&#123; array[j] = array[j - 1]; &#125; array[i] = num; &#125;&#125; 总结、对比 算法 平均时间复杂度 最好情况 最坏情况 空间复杂度 稳定性 冒泡排序 O(n²) O(n²) O(n²) O(1) 稳定 选择排序 O(n²) O(n²) O(n²) O(1) 不稳定 直接插入排序 O(n²) O(n) O(n²) O(1) 稳定 折半插入排序 O(n²) O(n) O(n²) O(1) 稳定 希尔排序 O(n^1.3) O(nlogn) O(n²) O(1) 不稳定 归并排序 O(nlog₂n) O(nlog₂n) O(nlog₂n) O(n) 稳定 快速排序 O(nlog₂n) O(nlog₂n) O(n²) O(nlog₂n) 不稳定 堆排序 O(nlog₂n) O(nlog₂n) O(nlog₂n) O(1) 不稳定 基数排序 O(n+k) O(n+k) O(n+k) O(k) 稳定 桶排序 O(n+k) O(n+k) O(n²) O(n+k) (不)稳定 基数排序 O(d(n+k)) O(d(n+k)) O(d(n+kd)) O(n+kd) 稳定 参考文献：https://www.cnblogs.com/morethink/p/8419151.html#%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F]]></content>
       <categories>
-        <category>科学上网</category>
+        <category>面试</category>
       </categories>
       <tags>
-        <tag>ShadowSocks</tag>
+        <tag>面试</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo换机前后的需要做的]]></title>
+    <url>%2F2019%2F03%2F24%2Fhexo%E6%8D%A2%E7%94%B5%E8%84%91%E8%A6%81%E5%81%9A%E7%9A%84%2F</url>
+    <content type="text"><![CDATA[换机之前的步骤 克隆项目到本地 1git clone 项目 进入项目文件夹，删掉除.git外的所有。 把原来hexo内所有内容复制过来。 创建分支 1git checkout -b hexo 添加add、commit、推送，操作类似普通项目 123git add --allgit commit -m &quot;&quot;git push --set-upstream origin hexo 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 换机之后的步骤 clone到本地 1git clone -b hexo 项目 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 参考文献： https://blog.csdn.net/heimu24/article/details/81210640]]></content>
   </entry>
   <entry>
     <title><![CDATA[数据库其他知识]]></title>
@@ -24,8 +24,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>面试</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -36,8 +36,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>面试</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -61,8 +61,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>面试</tag>
+        <tag>数据库</tag>
         <tag>索引</tag>
       </tags>
   </entry>
@@ -74,8 +74,8 @@
         <category>面试</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
         <tag>面试</tag>
+        <tag>数据库</tag>
         <tag>范式</tag>
       </tags>
   </entry>
@@ -90,6 +90,17 @@
       <tags>
         <tag>面试</tag>
         <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搭建ShadowSocks]]></title>
+    <url>%2F2018%2F09%2F21%2F%E6%90%AD%E5%BB%BAShadowSocks%2F</url>
+    <content type="text"><![CDATA[搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html ss的配制与使用 检查Python版本 1$ python –version 安装m2crypto和python-setuptools 1$ yum install m2crypto python-setuptools 安装pip 1yum -y install python-pip 或者（没试过）1$ easy_install pip 安装ss 1$ pip shadowsocks 配置服务器参数 1$ vi /etc/shadowsocks.json 12345678910&#123; &quot;server&quot;:&quot;my_server_ip&quot;, //服务器的IP地址 &quot;server_port&quot;:7711, //服务器的端口 &quot;local_address&quot;: &quot;127.0.0.1&quot;, //本机IP地址 &quot;local_port&quot;:1080, //本机端口 &quot;password&quot;:&quot;mypassword&quot;, //自己设定的密码 &quot;timeout&quot;:300, //超出时间 &quot;method&quot;:&quot;aes-256-cfb&quot;, //加密方法，推荐使用&quot;aes-256-cfb&quot; &quot;fast_open&quot;: false //true 或 false&#125;&#125; 若是多用户模式，将server_port和password合并为port_password： 1234&quot;port_password&quot;: &#123; &quot;443&quot;: &quot; mypassword 1”, //对应端口设定不同的密码 &quot;8888&quot;: &quot; mypassword 2” &#125;, 安装gevent Gevent可以提高ss性能，由于gevent依赖于libevent和greenlet 123$ yum install -y libevent$ pip install greenlet$ pip install gevent 配置防火墙 为了提高系统的安全性，需要安装防火墙 1$ yum install firewalld 启动防火墙 1$ systemctl start firewalld 开启相应端口 12$ firewall-cmd --permanent --zone=public --add-port=443/tcp$ firewall-cmd –reload 查看修改ss服务器的端口密码 查看当前ss服务器所开放的端口 1ss -lntp | grep ssserver 查看当前ss服务器的密码，通过以下命令可见ss的配置文件，配置文件中自然有密码 1ps aux | grep ssserver 用cat查看下配置文件即可看见密码了，vim修改 1vim /etc/shadowsocks.json ss启动停止方法 启动，停止，重启，状态：1234567service shadowsocks startservice shadowsocks stopservice shadowsocks restartservice shadowsocks status 参考：https://github.com/easonhuang123/blog/issues/1https://blog.whsir.com/post-1045.html]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>ShadowSocks</tag>
       </tags>
   </entry>
   <entry>
