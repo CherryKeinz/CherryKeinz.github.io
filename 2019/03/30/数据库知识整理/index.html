@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="石头门的选择">
 <meta property="og:description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性，X-&amp;gt;Y，X&amp;apos;是X的子集，若存在X&amp;apos;-&amp;gt;Y，则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-31T14:14:59.021Z">
+<meta property="og:updated_time" content="2019-03-31T14:44:15.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库知识整理">
 <meta name="twitter:description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性，X-&amp;gt;Y，X&amp;apos;是X的子集，若存在X&amp;apos;-&amp;gt;Y，则">
@@ -460,11 +460,11 @@
 <tr>
 <td>主键索引</td>
 <td>在主键索引中，索引页中存放的是主键和指向数据页的偏移量；数据页中存放的是主键和该主键所属行记录的地址空间。</td>
-<td>在主键索引中，索引页中存放的是主键和指向数据页的偏移量；数据页中存放的是主键和该主键所属行记录的地址空间。</td>
+<td>索引页仍然存放主键和和指向数据页的偏移量，但数据页存放的是完整的记录。也就是在InnoDB中，数据和主键索引是存放在一起的。</td>
 </tr>
 <tr>
 <td>辅助索引</td>
-<td>索引页仍然存放主键和和指向数据页的偏移量，但数据页存放的是完整的记录。</td>
+<td>在MyISAM中，主索引和辅助索引（Secondary key）在结构上没有任何区别，只是主索引要求key是唯一的，而辅助索引的key可以重复。综上所述，在MyISAM中，索引文件和数据文件分开存放，不管是主键索引还是辅助索引，都属于非聚集索引。</td>
 <td>索引节点存放的内容一样，仍然是键值信息和指向数据页的偏移量；但数据页中存放的是键值信息和该键值对应的主键。然后通过主键查询主键索引就能找到该条记录。</td>
 </tr>
 </tbody>
@@ -845,7 +845,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -856,7 +856,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
