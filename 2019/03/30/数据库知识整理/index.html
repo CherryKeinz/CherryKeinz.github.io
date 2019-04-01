@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="石头门的选择">
 <meta property="og:description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性，X-&amp;gt;Y，X&amp;apos;是X的子集，若存在X&amp;apos;-&amp;gt;Y，则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-31T14:44:15.350Z">
+<meta property="og:updated_time" content="2019-04-01T12:41:39.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库知识整理">
 <meta name="twitter:description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性，X-&amp;gt;Y，X&amp;apos;是X的子集，若存在X&amp;apos;-&amp;gt;Y，则">
@@ -609,7 +609,7 @@
 <p>MVCC，多版本并发控制，是mysql数据库InnoDB引擎隔离级别的实现。用于Read Committed和Repeatable Read两种隔离级别。</p>
 <p>InnoDB会为每一行添加两个字段，分别表示<strong>创建的版本</strong>和<strong>删除的版本</strong>，填入的是事务的版本号，这个版本号随着事务的创建不断递增，具体实现：</p>
 <ul>
-<li><strong>select</strong>：满足一下两个条件会返回改行数据：1、 该行的创建版本号小于等于当前版本号，用来确保select操作之前的操作已经执行落地；2、该行的创建版本号大于当前版本号或为空，大于说明当前版本已经有一个并发事务将该行删除了。</li>
+<li><strong>select</strong>：满足一下两个条件会返回该行数据：1、 该行的创建版本号小于等于当前版本号，用来确保select操作之前的操作已经执行落地；2、该行的删除版本号大于当前版本号或为空，大于说明当前版本已经有一个并发事务将该行删除了。</li>
 <li><strong>insert</strong>：将新插入的行的创建版本号设置为当前的系统版本号。</li>
 <li><strong>delete</strong>：将要删除的行的删除版本号设置为当前的系统版本号。</li>
 <li><strong>update</strong>：不执行原地操作，还是转化为insert+delete，对旧行执行delete，对新行执行insert。</li>
@@ -657,7 +657,48 @@
 <li>一个事务在获得某个数据行对象的 X 锁之前，必须先获得表的 IX 锁。</li>
 </ol>
 <p>事务 T 想要对表 A 加 X 锁时，只需要先检测是否有其它事务在表 A门口加没加 S/X/IX/IS 锁，如果加了就表示有其它事务正在使用这个表或者表中某一行的锁，因此事务 T 为整张表加 X 锁失败。进入等待。</p>
-<p>表级意向锁与表级的X，S的兼容关系如下（IX，IS是表级锁，不会和行级的X，S锁发生冲突。只会和表级的X，S发生冲突）：<br>· | X |IX | S | IS<br>:-:|:-:|:-:|:-:|:-:<br>X | × | × | × | ×<br>IX | × | √ | × | √<br>S | × | × | √ | √<br>IS | × | √ | √ | √</p>
+<p>表级意向锁与表级的X，S的兼容关系如下（IX，IS是表级锁，不会和行级的X，S锁发生冲突。只会和表级的X，S发生冲突）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">·</th>
+<th style="text-align:center">X</th>
+<th style="text-align:center">IX</th>
+<th style="text-align:center">S</th>
+<th style="text-align:center">IS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">IX</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">IS</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
 <h3 id="三级封锁协议"><a href="#三级封锁协议" class="headerlink" title="三级封锁协议"></a>三级封锁协议</h3><font color="red">保证数据一致性</font>
 
 <h4 id="一级封锁协议"><a href="#一级封锁协议" class="headerlink" title="一级封锁协议"></a>一级封锁协议</h4><p>事务 T 要修改数据 A 时必须加 X 锁，直到 T 结束才释放锁。</p>
