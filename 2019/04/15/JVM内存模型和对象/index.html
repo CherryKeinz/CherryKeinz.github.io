@@ -103,7 +103,7 @@
 <meta property="og:description" content="JVM内存模型和对象Java内存区域 程序计数器程序计数器（Program Counter Register）是一块较小的内存空间，可以看做是当前线程所执行的字节码的行号指示器。 如果是执行java方法，计数器记录的是正在执行的虚拟机字节码指令的地址；如果native方法，计数器值为空。 不会发生任何OutOfMemoryError。 Java虚拟机栈线程私有。虚拟机栈描述的是Java方法执行的内">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/image/interview_prep/jvm.jpg">
-<meta property="og:updated_time" content="2019-04-15T06:40:20.652Z">
+<meta property="og:updated_time" content="2019-04-17T13:40:34.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM内存模型和对象">
 <meta name="twitter:description" content="JVM内存模型和对象Java内存区域 程序计数器程序计数器（Program Counter Register）是一块较小的内存空间，可以看做是当前线程所执行的字节码的行号指示器。 如果是执行java方法，计数器记录的是正在执行的虚拟机字节码指令的地址；如果native方法，计数器值为空。 不会发生任何OutOfMemoryError。 Java虚拟机栈线程私有。虚拟机栈描述的是Java方法执行的内">
@@ -426,7 +426,7 @@
 <h3 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h3><p>Java虚拟机的内存最大的。被所有线程共享。唯一目的是存放对象实例。</p>
 <p>Java堆是垃圾收集器管理的主要区域。细分为：新生代、老年代。</p>
 <p>如果在堆中没有内存完成实例分配，而且堆无法扩展，会OutOfMemoryError异常。</p>
-<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>线程共享。存储虚拟机加载的类信息、常亮、静态变量、即时编译器编译后的代码等。可以不实现垃圾收集。</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>线程共享。存储虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等。可以不实现垃圾收集。</p>
 <p>当方法区无法满足内存分配需求，OutOfMemoryError异常。</p>
 <h3 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h3><p>是方法区的一部分。Class文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息是常量池，用于存放编译器生成的各种字面量和符号引用，这些内容在类加载时进入该区域。</p>
 <p>无法满足内存分配需求，OutOfMemoryError异常。</p>
@@ -624,7 +624,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,7 +635,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
