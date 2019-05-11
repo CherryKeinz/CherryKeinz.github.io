@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/image/interview_prep/java/aqc_ex.png">
 <meta property="og:image" content="/image/interview_prep/java/aqs_nano.png">
-<meta property="og:updated_time" content="2019-05-11T09:06:00.208Z">
+<meta property="og:updated_time" content="2019-05-11T09:09:44.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="队列同步器（AQS）">
 <meta name="twitter:description" content="队列同步器（AQS）队列选择器（AbstractQueuedSynchronizer）是用来构建锁或者其他同步组件的基础框架。 同步器的主要使用方式是继承，子类通过继承同步器并实现它的抽象方法来管理同步状态。 同步器是实现锁的关键，在锁的实现中聚合同步器，利用同步器实现锁的语义。锁是面向使用者的，同步器面向的是锁的实现者。 接口同步器的设计是基于模板方法。使用者继承同步器并重写制定的方法，随后将同">
@@ -487,6 +487,8 @@
 <li>如果nanosTimeout小于等于spinForTimeoutThrehold时，将不会将使该线程进行超时等待，而是进入快速自旋。</li>
 </ul>
 <p><img src="\image\interview_prep\java\aqs_nano.png" alt="aqs_nano.png"></p>
+<p>参考：</p>
+<p><a href="https://yq.aliyun.com/articles/639608" target="_blank" rel="noopener">深入学习Lock锁（1）——队列同步器</a></p>
 
       
     </div>
