@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html  ss的配制与使用 检查Python版本  1$ python –version  安装m2crypto和python-setuptools  1$ yum install m2cryp">
+<meta name="description" content="搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html  ss的配制与使用 检查Python版本  1$ python -version  安装m2crypto和python-setuptools  1$ yum install m2cryp">
 <meta name="keywords" content="ShadowSocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建ShadowSocks">
 <meta property="og:url" content="CherryKeinz.github.io/2018/09/21/搭建ShadowSocks/index.html">
 <meta property="og:site_name" content="石头门的选择">
-<meta property="og:description" content="搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html  ss的配制与使用 检查Python版本  1$ python –version  安装m2crypto和python-setuptools  1$ yum install m2crypto python-setuptools  安装pip  1yum -y ins">
+<meta property="og:description" content="搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html  ss的配制与使用 检查Python版本  1$ python -version  安装m2crypto和python-setuptools  1$ yum install m2crypto python-setuptools  安装pip  123yum -y i">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/image/ssclient.png">
-<meta property="og:updated_time" content="2019-03-24T07:45:59.456Z">
+<meta property="og:updated_time" content="2019-06-10T08:14:49.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建ShadowSocks">
-<meta name="twitter:description" content="搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html  ss的配制与使用 检查Python版本  1$ python –version  安装m2crypto和python-setuptools  1$ yum install m2crypto python-setuptools  安装pip  1yum -y ins">
+<meta name="twitter:description" content="搭建ShadowSocks客户端下载https://shadowsocks.org/en/download/clients.html  ss的配制与使用 检查Python版本  1$ python -version  安装m2crypto和python-setuptools  1$ yum install m2crypto python-setuptools  安装pip  123yum -y i">
 <meta name="twitter:image" content="/image/ssclient.png">
 
 
@@ -156,6 +156,11 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <!-- mp3 player -->
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
 
   
   
@@ -408,7 +413,7 @@
 <h3 id="ss的配制与使用"><a href="#ss的配制与使用" class="headerlink" title="ss的配制与使用"></a>ss的配制与使用</h3><ol>
 <li>检查Python版本</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python –version</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -version</span><br></pre></td></tr></table></figure>
 <ol>
 <li>安装m2crypto和python-setuptools</li>
 </ol>
@@ -416,12 +421,12 @@
 <ol>
 <li>安装pip</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install python-pip</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install epel-release</span><br><span class="line"></span><br><span class="line">yum -y install python-pip</span><br></pre></td></tr></table></figure>
 <p>或者（没试过）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ easy_install pip</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>安装ss</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip shadowsocks</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install shadowsocks</span><br></pre></td></tr></table></figure>
 <ol>
 <li>配置服务器参数</li>
 </ol>
@@ -444,7 +449,7 @@
 <p>启动防火墙</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start firewalld</span><br></pre></td></tr></table></figure>
 <p>开启相应端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ firewall-cmd --permanent --zone=public --add-port=443/tcp</span><br><span class="line">$ firewall-cmd –reload</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ firewall-cmd --permanent --zone=public --add-port=443/tcp</span><br><span class="line">$ firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <h3 id="查看修改ss服务器的端口密码"><a href="#查看修改ss服务器的端口密码" class="headerlink" title="查看修改ss服务器的端口密码"></a>查看修改ss服务器的端口密码</h3><ul>
 <li>查看当前ss服务器所开放的端口</li>
 </ul>
@@ -460,7 +465,8 @@
 <ul>
 <li>ss启动停止方法</li>
 </ul>
-<p>启动，停止，重启，状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">service shadowsocks start</span><br><span class="line"></span><br><span class="line">service shadowsocks stop</span><br><span class="line"></span><br><span class="line">service shadowsocks restart</span><br><span class="line"></span><br><span class="line">service shadowsocks status</span><br></pre></td></tr></table></figure></p>
+<p>启动，停止，重启，状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br><span class="line"></span><br><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br><span class="line"></span><br><span class="line">ssserver -c /etc/shadowsocks.json -d restart</span><br></pre></td></tr></table></figure>
 <p>参考：<br><a href="https://github.com/easonhuang123/blog/issues/1" target="_blank" rel="noopener">https://github.com/easonhuang123/blog/issues/1</a><br><a href="https://blog.whsir.com/post-1045.html" target="_blank" rel="noopener">https://blog.whsir.com/post-1045.html</a></p>
 
       
