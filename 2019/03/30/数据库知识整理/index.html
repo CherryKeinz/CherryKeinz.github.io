@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性">
+<meta name="description" content="数据库知识整理">
 <meta name="keywords" content="面试,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库知识整理">
 <meta property="og:url" content="CherryKeinz.github.io/2019/03/30/数据库知识整理/index.html">
 <meta property="og:site_name" content="石头门的选择">
-<meta property="og:description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性，X-&amp;gt;Y，X&amp;apos;是X的子集，若存在X&amp;apos;-&amp;gt;Y，则">
+<meta property="og:description" content="数据库知识整理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T12:41:39.132Z">
+<meta property="og:updated_time" content="2019-06-13T03:08:40.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库知识整理">
-<meta name="twitter:description" content="数据库相关总结 参考：https://www.weiweiblog.cn/databases/  范式1. 第一范式每个属性都不可再分。 2. 第二范式消除了非主属性对于码的部分函数依赖。所有非主属性都必须和主键有完全依赖关系，不能存在有某个非主属性只和主键的一部分有关。 12345部分函数依赖：若XY是关系R中的属性，X-&amp;gt;Y，X&amp;apos;是X的子集，若存在X&amp;apos;-&amp;gt;Y，则">
+<meta name="twitter:description" content="数据库知识整理">
 
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -402,6 +402,10 @@
 
           
 
+          
+              <div class="post-description">
+                  数据库知识整理
+              </div>
           
 
         </div>
@@ -791,32 +795,6 @@
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
-
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-      
     </div>
   </div>
 
@@ -884,7 +862,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -895,7 +873,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -906,7 +884,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1013,6 +991,8 @@ var jiathis_config={
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
