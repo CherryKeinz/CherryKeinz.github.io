@@ -1299,7 +1299,7 @@ pre .javascript .function {
 }
 @media (min-width: 992px) {
   .posts-expand .post-body {
-    text-align: left;
+    text-align: center;
   }
 }
 .posts-expand .post-body h2,
@@ -1465,12 +1465,12 @@ pre .javascript .function {
   display: none;
 }
 .posts-expand .post-title {
-  text-align: center;
+  text-align: left;
   word-break: break-word;
   font-weight: 700;
 }
 .posts-expand .post-title-link {
-  text-align: center;
+  text-align: left;
   display: inline-block;
   position: relative;
   color: #555;
@@ -1827,7 +1827,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffe2ff;
+  background: #bfff0f;
 }
 .links-of-blogroll {
   font-size: 13px;
