@@ -1103,7 +1103,7 @@ pre .javascript .function {
 }
 .site-meta {
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .site-meta {
@@ -1827,7 +1827,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fba363;
+  background: #ffe2ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2784,12 +2784,12 @@ hr {
 }
 .posts-expand .post-title,
 .posts-expand .post-meta {
-  text-align: center;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .posts-expand .post-title,
   .posts-expand .post-meta {
-    text-align: center;
+    text-align: left;
   }
 }
 .posts-expand .post-eof {
@@ -2933,28 +2933,6 @@ hr {
     width: auto;
     text-align: center;
   }
-}
-body {
-  background: url("/images/april.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 100% 100%;
-  background-size: cover;
-}
-div.posts-expand {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 25px;
-  background: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  font-weight: 700;
-}
-article {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 25px;
-  background: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 div[itemprop="articleBody"] {
   font-style: italic;
