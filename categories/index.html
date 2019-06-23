@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="Java |Python |el psy congroo">
+<meta name="description" content="如果把整个太平洋的水倒出，也浇不熄我对你爱情的火。 整个太平洋的水全部倒得出吗？ 不行。所以我并不爱你。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
 <meta property="og:url" content="CherryKeinz.github.io/categories/index.html">
 <meta property="og:site_name" content="石头门的选择">
-<meta property="og:description" content="Java |Python |el psy congroo">
+<meta property="og:description" content="如果把整个太平洋的水倒出，也浇不熄我对你爱情的火。 整个太平洋的水全部倒得出吗？ 不行。所以我并不爱你。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-11-22T07:39:55.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="Java |Python |el psy congroo">
+<meta name="twitter:description" content="如果把整个太平洋的水倒出，也浇不熄我对你爱情的火。 整个太平洋的水全部倒得出吗？ 不行。所以我并不爱你。">
 
 
 
@@ -249,6 +249,36 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-games">
+          <a href="/games/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br />
+            
+            游戏
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -383,11 +413,11 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/avatar/avatar.gif"
+                src="/avatar/avatar.png"
                 alt="Keinz" />
             
               <p class="site-author-name" itemprop="name">Keinz</p>
-              <p class="site-description motion-element" itemprop="description">Java |Python |el psy congroo</p>
+              <p class="site-description motion-element" itemprop="description">如果把整个太平洋的水倒出，</br>也浇不熄我对你爱情的火。</br> 整个太平洋的水全部倒得出吗？</br> 不行。</br>所以我并不爱你。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -999,6 +1029,70 @@
   
 
   
+
+  
+
+  <script>
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        document.title = '啊咧?真由氏的怀表停了呢~' + OriginTitile;
+        clearTimeout(titleTime);
+      } else {
+        document.title = '这一切都是命运石之门的选择！' + OriginTitile;
+        titleTime = setTimeout(function() {
+          document.title = OriginTitile;
+        }, 2000);
+      }
+    });
+  </script>
+
+
+
+
+
+  <script src="/js/src/wobblewindow.js"></script>
+  <script>
+    //只在桌面版网页启用特效
+    if( window.innerWidth > 768  ){
+      $(document).ready(function () {
+        
+          $('#header').wobbleWindow({
+            radius: 50,
+            movementTop: false,
+            movementLeft: false,
+            movementRight: false,
+            debug: false,
+          });
+        
+
+        
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
+
+        
+          $('#footer').wobbleWindow({
+            radius: 50,
+            movementBottom: false,
+            movementLeft: false,
+            movementRight: false,
+            offsetX: ,
+            position: 'absolute',
+            debug: false,
+          });
+        
+      });
+    }
+  </script>
+
 
 </body>
 </html>
