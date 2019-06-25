@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="面试,数据库," />
+  <meta name="keywords" content="面试,Java," />
 
 
 
@@ -94,18 +94,20 @@
 
 
 
-<meta name="description" content="数据库索引总结 数据库索引索引通常是由B树或者B+树实现。 B树和B+树的区别 B树的键和值也存在内部节点和叶子结点中，B+树内部结点只存键，叶子结点存键和值。 B+树的叶子结点有一条链相连。  B树的好处B树在内部存键值，频繁访问的节点在根节点附近可以提高查询效率，如果特定数据是重复读取，B树更好。 B+树的好处一次">
-<meta name="keywords" content="面试,数据库">
+<meta name="description" content="Java面试和笔试中遇到的一些基础知识，总是忘，记录一下用以复习。">
+<meta name="keywords" content="面试,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库索引总结">
-<meta property="og:url" content="CherryKeinz.github.io/2019/03/22/数据库索引/index.html">
+<meta property="og:title" content="Java常见基础知识汇总">
+<meta property="og:url" content="CherryKeinz.github.io/2019/06/25/Java常见基础知识汇总/index.html">
 <meta property="og:site_name" content="石头门的选择">
-<meta property="og:description" content="数据库索引总结 数据库索引索引通常是由B树或者B+树实现。 B树和B+树的区别 B树的键和值也存在内部节点和叶子结点中，B+树内部结点只存键，叶子结点存键和值。 B+树的叶子结点有一条链相连。  B树的好处B树在内部存键值，频繁访问的节点在根节点附近可以提高查询效率，如果特定数据是重复读取，B树更好。 B+树的好处一次读取大量数据时，因为B+树内部节点只存键，因此可以读取更多键，又因为叶子节点有链">
+<meta property="og:description" content="Java面试和笔试中遇到的一些基础知识，总是忘，记录一下用以复习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-30T04:46:42.353Z">
+<meta property="og:image" content="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true">
+<meta property="og:updated_time" content="2019-06-25T12:28:24.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库索引总结">
-<meta name="twitter:description" content="数据库索引总结 数据库索引索引通常是由B树或者B+树实现。 B树和B+树的区别 B树的键和值也存在内部节点和叶子结点中，B+树内部结点只存键，叶子结点存键和值。 B+树的叶子结点有一条链相连。  B树的好处B树在内部存键值，频繁访问的节点在根节点附近可以提高查询效率，如果特定数据是重复读取，B树更好。 B+树的好处一次读取大量数据时，因为B+树内部节点只存键，因此可以读取更多键，又因为叶子节点有链">
+<meta name="twitter:title" content="Java常见基础知识汇总">
+<meta name="twitter:description" content="Java面试和笔试中遇到的一些基础知识，总是忘，记录一下用以复习。">
+<meta name="twitter:image" content="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true">
 
 
 
@@ -135,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="CherryKeinz.github.io/2019/03/22/数据库索引/"/>
+  <link rel="canonical" href="CherryKeinz.github.io/2019/06/25/Java常见基础知识汇总/"/>
 
 
 
 
 
-  <title>数据库索引总结 | 石头门的选择</title>
+  <title>Java常见基础知识汇总 | 石头门的选择</title>
   
 
 
@@ -347,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="CherryKeinz.github.io/2019/03/22/数据库索引/">
+    <link itemprop="mainEntityOfPage" href="CherryKeinz.github.io/2019/06/25/Java常见基础知识汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Keinz">
@@ -364,7 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据库索引总结</h1>
+          <h1 class="post-title" itemprop="name headline">Java常见基础知识汇总</h1>
         
 
         <div class="post-meta">
@@ -376,8 +378,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-22T09:55:13+08:00">
-                2019-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-25T20:07:29+08:00">
+                2019-06-25
               </time>
             
 
@@ -410,8 +412,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/面试/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -441,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  521 字
                 </span>
               
 
@@ -457,12 +459,16 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  1 分钟
                 </span>
               
             </div>
           
 
+          
+              <div class="post-description">
+                  Java面试和笔试中遇到的一些基础知识，总是忘，记录一下用以复习。
+              </div>
           
 
         </div>
@@ -476,78 +482,37 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true" rel="gallery_cjxbsdfbt0006r4v24h9fbvh0"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <h1 id="数据库索引总结"><a href="#数据库索引总结" class="headerlink" title="数据库索引总结"></a>数据库索引总结</h1><hr>
-<h2 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h2><p>索引通常是由B树或者B+树实现。</p>
-<h3 id="B树和B-树的区别"><a href="#B树和B-树的区别" class="headerlink" title="B树和B+树的区别"></a>B树和B+树的区别</h3><ul>
-<li>B树的键和值也存在内部节点和叶子结点中，B+树内部结点只存键，叶子结点存键和值。</li>
-<li>B+树的叶子结点有一条链相连。</li>
-</ul>
-<h5 id="B树的好处"><a href="#B树的好处" class="headerlink" title="B树的好处"></a>B树的好处</h5><p>B树在内部存键值，频繁访问的节点在根节点附近可以提高查询效率，如果特定数据是重复读取，B树更好。</p>
-<h5 id="B-树的好处"><a href="#B-树的好处" class="headerlink" title="B+树的好处"></a>B+树的好处</h5><p>一次读取大量数据时，因为B+树内部节点只存键，因此可以读取更多键，又因为叶子节点有链，读取大量数据时不需要每次都遍历内部节点。</p>
-<h3 id="数据库使用B-还不是B"><a href="#数据库使用B-还不是B" class="headerlink" title="数据库使用B+还不是B"></a>数据库使用B+还不是B</h3><p><strong>B树只适合随机检索，B+树同时适合随机检索和顺序检索。</strong></p>
-<p><strong>B+树空间利用率更高，I/O次数少，磁盘读写少。</strong><br>索引也很大，需要以文件的形式存在磁盘中。索引查找就会产生I/O操作。B+树可以一次读取更多的关键字，因此I/O次数少。</p>
-<p><strong>B+树查询效率更稳定。</strong><br>B树关键字在内部节点中也有，找到关键字就能确定记录。性能代价相当于二分查找。<br>B+树每次都是跟到叶节点，效率更稳定。</p>
-<p><strong>B+树顺序遍历效率也不低。</strong><br>B+树叶子结点有链。</p>
-<h3 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h3><ul>
-<li>主键索引：数据列不允许重复，不允许为null，一个表只能有一个主键索引。</li>
-<li>唯一索引：数据列不允许重复，允许为null，一个表允许多个列创建唯一索引。</li>
-<li>普通索引：没有唯一性限制，可以为空。</li>
-<li>全文索引：主要用来查找文本中的关键字，而不是直接与索引中的值相比较。</li>
-<li>联合索引：可以多个列共同创建联合索引。一个查询可以使用其中一个列，但必须遵守最左前缀原则。</li>
-</ul>
-<h3 id="聚集索与非聚集索"><a href="#聚集索与非聚集索" class="headerlink" title="聚集索与非聚集索"></a>聚集索与非聚集索</h3><ul>
-<li>聚集索引：各行的物理顺序和逻辑顺序相同，一个表只能有一个。</li>
-<li>非聚集索引：数据与索引在不同位置，索引中存在指向数据的指针，可以有多个。非聚集索引，分成普通索引，唯一索引，全文索引。</li>
-</ul>
-<p>InnoDB的数据文件本身就是索引文件。InnoDB数据文件按聚集索引，所以InnoDB必须有主键。InnoDB聚集索引规则：</p>
-<ol>
-<li>如果有主键，主键就是聚集索引。</li>
-<li>如果没有主键，第一个唯一非空索引就是聚集索引。</li>
-<li>如果1、2都没有，会生成一个隐藏的主键作为聚集索引，它是6个字节的列，随着数据插入自增。</li>
+        <h1 id="Java常见基础知识汇总"><a href="#Java常见基础知识汇总" class="headerlink" title="Java常见基础知识汇总"></a>Java常见基础知识汇总</h1><h2 id="1-sleep-与wait-区别"><a href="#1-sleep-与wait-区别" class="headerlink" title="1. sleep()与wait()区别"></a>1. sleep()与wait()区别</h2><ol>
+<li><strong>锁</strong>：sleep()方法正在执行的线程主动让出CPU（然后CPU就可以去执行其他任务），在sleep指定时间后CPU再回到该线程继续往下执行(<font color="red">注意：sleep方法只让出了CPU，而并不会释放同步资源锁！！！</font>)；wait()方法则是指当前线程让自己暂时退让出同步资源锁，以便其他正在等待该资源的线程得到该资源进而运行，只有调用了notify()方法，之前调用wait()的线程才会解除wait状态，可以去参与竞争同步资源锁，进而得到执行。</li>
+<li><strong>使用的位置</strong>：sleep()方法可以在任何地方使用；wait()方法则只能在同步方法或同步块中使用；</li>
+<li><strong>属于的类</strong>：sleep()是线程类（Thread）的方法，调用会暂停此线程指定的时间，但监控依然保持，不会释放对象锁，到时间自动恢复；wait()是Object的方法，调用会放弃对象锁，进入等待队列，待调用<strong>notify()/notifyAll()</strong>唤醒指定的线程或者所有线程，才会进入锁池，不再次获得对象锁才会进入运行状态；</li>
 </ol>
-<h3 id="MyISAM和InnoDB索引实现"><a href="#MyISAM和InnoDB索引实现" class="headerlink" title="MyISAM和InnoDB索引实现"></a>MyISAM和InnoDB索引实现</h3><table>
-<thead>
-<tr>
-<th>索引</th>
-<th>MyISAM</th>
-<th>InnoDB</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>主键索引</td>
-<td>在主键索引中，索引页中存放的是主键和指向数据页的偏移量；数据页中存放的是主键和该主键所属行记录的地址空间。</td>
-<td>在主键索引中，索引页中存放的是主键和指向数据页的偏移量；数据页中存放的是主键和该主键所属行记录的地址空间。</td>
-</tr>
-<tr>
-<td>辅助索引</td>
-<td>索引页仍然存放主键和和指向数据页的偏移量，但数据页存放的是完整的记录。</td>
-<td>索引节点存放的内容一样，仍然是键值信息和指向数据页的偏移量；但数据页中存放的是键值信息和该键值对应的主键。然后通过主键查询主键索引就能找到该条记录。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="索引的优点"><a href="#索引的优点" class="headerlink" title="索引的优点"></a>索引的优点</h3><ul>
-<li>创建唯一性索引，可以确保每行数据的唯一性。</li>
-<li>提高数据检索效率。</li>
-<li>加快表与表之间的连接。</li>
-<li>使用分组和排序字句检索时，可以加快检索时间。</li>
-<li>通过使用索引，在查询过程中，使用查询优化器，提高系统性能。</li>
-</ul>
-<h3 id="索引的缺点"><a href="#索引的缺点" class="headerlink" title="索引的缺点"></a>索引的缺点</h3><ul>
-<li>时间方面：创建和维护需要时间。对数据增删改也需要对索引维护。</li>
-<li>空间方面：索引需要占据物理空间。</li>
-</ul>
-<h3 id="索引的优化"><a href="#索引的优化" class="headerlink" title="索引的优化"></a>索引的优化</h3><ul>
-<li>非空字段：索引的列最好为非空。空值很难优化，用其他方式（0，特殊值等）代替空值。</li>
-<li>取离散大的列：将更离散的数据放在联合索引前面。</li>
-<li>索引字段越小越好：数据以页为单位存储，一页数据越多，一次IO操作得到的数据越多。</li>
-<li>对 where,on,group by,order by 中出现的列使用索引。</li>
-<li>对于like查询，%不放在前面。</li>
-<li>最左前缀匹配原则。</li>
-</ul>
-<h3 id="最左前缀匹配原则"><a href="#最左前缀匹配原则" class="headerlink" title="最左前缀匹配原则"></a>最左前缀匹配原则</h3><p>mysql会向右匹配到范围查询（&lt;,&gt;,between等），=、in放在左边。 = in 可以乱序。</p>
+<h2 id="2-HashSet和TreeSet的区别"><a href="#2-HashSet和TreeSet的区别" class="headerlink" title="2. HashSet和TreeSet的区别"></a>2. HashSet和TreeSet的区别</h2><ol>
+<li><strong>实现方式</strong>：HashSet是采用hash表来实现的；TreeSet是采用树结构实现(红黑树算法)。</li>
+<li><strong>排列顺序</strong>：HashSet无序；TreeSet支持两种排序方式，自然排序和定制排序（实现comparable接口）。</li>
+<li><strong>复杂度</strong>：HashSet方法都是复杂度为O(1)；TreeSet方法都是复杂度为O(log (n))的方法。</li>
+<li><strong>判断方法</strong>：HashSet判断通过equals方法比较相等，并且两个对象的hashCode()方法返回值相等（需要重写hashCode（）和equals()方法）；TreeSet通过equals方法返回，或者通过CompareTo方法比较；</li>
+<li><strong>实现接口</strong>：HashSet实现Set接口；TreeSet实现SortedSet接口，SortedSet实现Set接口。</li>
+</ol>
+<p>备注：<strong>LinkedHashSet</strong>介于HashSet和TreeSet之间。它也是一个hash表，但是同时维护了一个双链表来记录插入的顺序。基本方法的复杂度为O(1)。</p>
 
       
     </div>
@@ -576,7 +541,7 @@
           
             <a href="/tags/面试/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
           
-            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -589,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/数据库范式/" rel="next" title="数据库范式总结">
-                <i class="fa fa-chevron-left"></i> 数据库范式总结
+              <a href="/2019/06/25/centos7安装nginx/" rel="next" title="CentOS7安装Nginx">
+                <i class="fa fa-chevron-left"></i> CentOS7安装Nginx
               </a>
             
           </div>
@@ -598,10 +563,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/23/剑指offer算法题 27-36/" rel="prev" title="剑指offer算法题 27——36">
-                剑指offer算法题 27——36 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -760,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库索引总结"><span class="nav-number">1.</span> <span class="nav-text">数据库索引总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库索引"><span class="nav-number">1.1.</span> <span class="nav-text">数据库索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#B树和B-树的区别"><span class="nav-number">1.1.1.</span> <span class="nav-text">B树和B+树的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#B树的好处"><span class="nav-number">1.1.1.0.1.</span> <span class="nav-text">B树的好处</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#B-树的好处"><span class="nav-number">1.1.1.0.2.</span> <span class="nav-text">B+树的好处</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库使用B-还不是B"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库使用B+还不是B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引类型"><span class="nav-number">1.1.3.</span> <span class="nav-text">索引类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚集索与非聚集索"><span class="nav-number">1.1.4.</span> <span class="nav-text">聚集索与非聚集索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyISAM和InnoDB索引实现"><span class="nav-number">1.1.5.</span> <span class="nav-text">MyISAM和InnoDB索引实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的优点"><span class="nav-number">1.1.6.</span> <span class="nav-text">索引的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的缺点"><span class="nav-number">1.1.7.</span> <span class="nav-text">索引的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的优化"><span class="nav-number">1.1.8.</span> <span class="nav-text">索引的优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最左前缀匹配原则"><span class="nav-number">1.1.9.</span> <span class="nav-text">最左前缀匹配原则</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java常见基础知识汇总"><span class="nav-number">1.</span> <span class="nav-text">Java常见基础知识汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-sleep-与wait-区别"><span class="nav-number">1.1.</span> <span class="nav-text">1. sleep()与wait()区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-HashSet和TreeSet的区别"><span class="nav-number">1.2.</span> <span class="nav-text">2. HashSet和TreeSet的区别</span></a></li></ol></li></ol></div>
             
 
           </div>
