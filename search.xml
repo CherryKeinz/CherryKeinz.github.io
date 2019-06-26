@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[CentOS7安装Nginx]]></title>
     <url>%2F2019%2F06%2F25%2Fcentos7%E5%AE%89%E8%A3%85nginx%2F</url>
-    <content type="text"><![CDATA[CentOS7安裝Nginx1. 下載nginx安裝包wget 官網下載地址 2.解壓編譯安裝tar -zxvf nginx-***.tar.gz ./configure --prefix=/usr/local/nginx（必须先建好目录） 此時可能會出現錯誤 ./configure: error: the HTTP rewrite module requires the PCRE library. ./configure: error: the HTTP cache module requires md5 functions 2.1 安裝pcre-develyum -y install pcre-devel 2.2 安裝openssl openssl-develyum -y install openssl openssl-devel 3. make、make installmake make install 4. 防火墻開啟對應端口firewall-cmd --zone=public --add-port=80/tcp --permanent firewall-cmd --reload]]></content>
+    <content type="text"><![CDATA[CentOS7安裝Nginx1. 下載nginx安裝包wget 官網下載地址 2.解壓編譯安裝tar -zxvf nginx-***.tar.gz ./configure --prefix=/usr/local/nginx（必须先建好目录） 此時可能會出現錯誤 ./configure: error: the HTTP rewrite module requires the PCRE library. ./configure: error: the HTTP cache module requires md5 functions 2.1 安裝pcre-develyum -y install pcre-devel 2.2 安裝openssl openssl-develyum -y install openssl openssl-devel 3. make、make installmake make install 4. 防火墻開啟對應端口firewall-cmd --zone=public --add-port=80/tcp --permanent firewall-cmd --reload 为nginx添加SSL支持模块使用proxy_pass https://XXXXXXXXX时，遇到问题 nginx https protocol requires SSL support in /usr/local/nginx/conf/nginx.conf 原因：在当初编译安装时，没有加--with-http_ssl_module参数。 解决办法：重新编译源码包。 关闭nginx，切到源码包目录 12./configure --prefix= /usr/local/nginx --with-http_ssl_modulemake 注意，此时千万不能手快直接 make install！ 12cp /usr/local/nginx/sbin/nginx ~/cp objs /nginx /usr/local/nginx/sbin/ 其中，objs/nginx 是新编译出来的nginx可执行程序。覆盖之后，再尝试重新启动nginx，就没有问题了。]]></content>
       <categories>
         <category>Nginx</category>
       </categories>
