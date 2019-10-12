@@ -103,7 +103,7 @@
 <meta property="og:description" content="Java面试和笔试中遇到的一些基础知识，总是忘，记录一下用以复习。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true">
-<meta property="og:updated_time" content="2019-06-26T09:51:14.567Z">
+<meta property="og:updated_time" content="2019-07-03T10:40:16.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java常见基础知识汇总">
 <meta name="twitter:description" content="Java面试和笔试中遇到的一些基础知识，总是忘，记录一下用以复习。">
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4k 字
+                  4.3k 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15 分钟
+                  16 分钟
                 </span>
               
             </div>
@@ -487,7 +487,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true" rel="gallery_cjxd46qyv003nj4v212hxwuh9"
+                 href="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true" rel="gallery_ck1nkkuje003zc4v2ttgv78iz"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://github.com/CherryKeinz/cherrykeinz.github.io/blob/master/images/cover/1.jpg?raw=true" itemprop="contentUrl"/>
               </a>
@@ -563,9 +563,16 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String A = <span class="string">"ab"</span>; <span class="comment">// 常量A</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String B = <span class="string">"cd"</span>; <span class="comment">// 常量B</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     String s = A + B;  <span class="comment">// 将两个常量用+连接对s进行初始化 </span></span><br><span class="line">     String t = <span class="string">"abcd"</span>;   </span><br><span class="line">    <span class="keyword">if</span> (s == t) &#123;   </span><br><span class="line">         System.out.println(<span class="string">"s等于t，它们是同一个对象"</span>);   </span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;   </span><br><span class="line">         System.out.println(<span class="string">"s不等于t，它们不是同一个对象"</span>);   </span><br><span class="line">     &#125;   </span><br><span class="line"> &#125; </span><br><span class="line"><span class="comment">// s等于t，它们是同一个对象</span></span><br><span class="line"><span class="comment">// A和B都是常量，值是固定的，因此s的值也是固定的，它在类被编译时就已经确定了。也就是说：String s=A+B; 等同于：String s="ab"+"cd";</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String A; <span class="comment">// 常量A</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String B;    <span class="comment">// 常量B</span></span><br><span class="line"><span class="keyword">static</span> &#123;   </span><br><span class="line">     A = <span class="string">"ab"</span>;   </span><br><span class="line">     B = <span class="string">"cd"</span>;   </span><br><span class="line"> &#125;   </span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;   </span><br><span class="line">    <span class="comment">// 将两个常量用+连接对s进行初始化   </span></span><br><span class="line">     String s = A + B;   </span><br><span class="line">     String t = <span class="string">"abcd"</span>;   </span><br><span class="line">    <span class="keyword">if</span> (s == t) &#123;   </span><br><span class="line">         System.out.println(<span class="string">"s等于t，它们是同一个对象"</span>);   </span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;   </span><br><span class="line">         System.out.println(<span class="string">"s不等于t，它们不是同一个对象"</span>);   </span><br><span class="line">     &#125;   </span><br><span class="line"> &#125; </span><br><span class="line"><span class="comment">// s不等于t，它们不是同一个对象</span></span><br><span class="line"><span class="comment">// A和B虽然被定义为常量，但是它们都没有马上被赋值。在运算出s的值之前，他们何时被赋值，以及被赋予什么样的值，都是个变数。因此A和B在被赋值之前，性质类似于一个变量。那么s就不能在编译期被确定，而只能在运行时被创建了。</span></span><br></pre></td></tr></table></figure>
 <h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h3><ul>
-<li>必须要关注编译期的行为，才能更好的理解常量池。</li>
-<li>运行时常量池中的常量，基本来源于各个class文件中的常量池。</li>
-<li>程序运行时，除非手动向常量池中添加常量(比如调用intern方法)，否则jvm不会自动添加常量到常量池。</li>
+<li><p>必须要关注编译期的行为，才能更好的理解常量池。</p>
+</li>
+<li><p>运行时常量池中的常量，基本来源于各个class文件中的常量池。</p>
+</li>
+<li><p>程序运行时，除非手动向常量池中添加常量(比如调用intern方法)，否则jvm不会自动添加常量到常量池。</p>
+</li>
+</ul>
+<h3 id="6-String、StringBuffer-、StringBuilder"><a href="#6-String、StringBuffer-、StringBuilder" class="headerlink" title="6. String、StringBuffer 、StringBuilder"></a>6. String、StringBuffer 、StringBuilder</h3><ul>
+<li><strong>可变性</strong>：String 不可变；StringBuffer 和 StringBuilder 可变</li>
+<li><strong>线程安全</strong>：String 不可变，因此是线程安全的；StringBuilder 不是线程安全的；StringBuffer 是线程安全的，内部使用 synchronized 进行同步。</li>
 </ul>
 <h2 id="5-static加载顺序、执行时机"><a href="#5-static加载顺序、执行时机" class="headerlink" title="5.static加载顺序、执行时机"></a>5.static加载顺序、执行时机</h2><h3 id="1-static代码块执行时机"><a href="#1-static代码块执行时机" class="headerlink" title="1. static代码块执行时机"></a>1. static代码块执行时机</h3><p>一个类的运行分为以下步骤：</p>
 <ol>
@@ -618,6 +625,17 @@
 <li>当声明的是基本类型的变量其变量名及其值放在堆内存中的；</li>
 <li>引用类型时，其声明的变量仍然会存储一个内存地址值，该内存地址值指向所引用的对象。引用变量名和对应的对象仍然存储在相应的堆中。</li>
 </ul>
+<h2 id="7-Java-与-C-的区别"><a href="#7-Java-与-C-的区别" class="headerlink" title="7. Java 与 C++ 的区别"></a>7. Java 与 C++ 的区别</h2><ul>
+<li>Java 是纯粹的面向对象语言，所有的对象都继承自 java.lang.Object，C++ 为了兼容 C 即支持面向对象也支持面向过程。</li>
+<li>Java 通过虚拟机从而实现跨平台特性，但是 C++ 依赖于特定的平台。</li>
+<li>Java 没有指针，它的引用可以理解为安全指针，而 C++ 具有和 C 一样的指针。</li>
+<li>Java 支持自动垃圾回收，而 C++ 需要手动回收。</li>
+<li>Java 不支持多重继承，只能通过实现多个接口来达到相同目的，而 C++ 支持多重继承。</li>
+<li>Java 不支持操作符重载，虽然可以对两个 String 对象执行加法运算，但是这是语言内置支持的操作，不属于操作符重载，而 C++ 可以。</li>
+<li>Java 的 goto 是保留字，但是不可用，C++ 可以使用 goto。</li>
+<li>Java 不支持条件编译，C++ 通过 #ifdef #ifndef 等预处理命令从而实现条件编译。</li>
+</ul>
+<h2 id="8-线程池"><a href="#8-线程池" class="headerlink" title="8. 线程池"></a>8. 线程池</h2><p><a href="https://www.nowcoder.com/discuss/152050?type=0&amp;order=0&amp;pos=6&amp;page=0" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/152050?type=0&amp;order=0&amp;pos=6&amp;page=0</a></p>
 
       
     </div>
@@ -668,6 +686,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/27/CopyOnWriteArrayList和CopyOnWriteArraySet/" rel="prev" title="CopyOnWriteArrayList和CopyOnWriteArraySet的源码解析">
+                CopyOnWriteArrayList和CopyOnWriteArraySet的源码解析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -755,7 +777,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -826,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java常见基础知识汇总"><span class="nav-text">Java常见基础知识汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-sleep-与wait-区别"><span class="nav-text">1. sleep()与wait()区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-HashSet和TreeSet的区别"><span class="nav-text">2. HashSet和TreeSet的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-int和Integer的区别"><span class="nav-text">3. int和Integer的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-区别概述"><span class="nav-text">1. 区别概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自动装箱和自动拆箱、缓存"><span class="nav-text">2. 自动装箱和自动拆箱、缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-自动装箱"><span class="nav-text">1. 自动装箱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自动拆箱"><span class="nav-text">2. 自动拆箱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-缓存"><span class="nav-text">3. 缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-的比较"><span class="nav-text">3. ==的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Integer与Integer"><span class="nav-text">1. Integer与Integer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Integer与int"><span class="nav-text">2. Integer与int</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-非new生成的Integer变量和new-Integer-生成的变量"><span class="nav-text">3. 非new生成的Integer变量和new Integer()生成的变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-对于两个非new生成的Integer对象"><span class="nav-text">4. 对于两个非new生成的Integer对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-算术运算"><span class="nav-text">5. 算术运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-常量池中的String"><span class="nav-text">4. 常量池中的String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态常量池"><span class="nav-text">1. 静态常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-运行时常量池"><span class="nav-text">2.  运行时常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-String类的intern"><span class="nav-text">3. String类的intern()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-实例比较"><span class="nav-text">4. 实例比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-总结"><span class="nav-text">5. 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-static加载顺序、执行时机"><span class="nav-text">5.static加载顺序、执行时机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-static代码块执行时机"><span class="nav-text">1. static代码块执行时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-带有static的代码执行顺序"><span class="nav-text">2. 带有static的代码执行顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-如果类还没有被加载"><span class="nav-text">1. 如果类还没有被加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-如果类已经被加载"><span class="nav-text">2. 如果类已经被加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-实例"><span class="nav-text">3. 实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-基本数据类型和引用类型在JVM中存储在哪"><span class="nav-text">6. 基本数据类型和引用类型在JVM中存储在哪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在方法中声明的变量"><span class="nav-text">1. 在方法中声明的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-在类中声明的变量"><span class="nav-text">2. 在类中声明的变量</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java常见基础知识汇总"><span class="nav-text">Java常见基础知识汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-sleep-与wait-区别"><span class="nav-text">1. sleep()与wait()区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-HashSet和TreeSet的区别"><span class="nav-text">2. HashSet和TreeSet的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-int和Integer的区别"><span class="nav-text">3. int和Integer的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-区别概述"><span class="nav-text">1. 区别概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自动装箱和自动拆箱、缓存"><span class="nav-text">2. 自动装箱和自动拆箱、缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-自动装箱"><span class="nav-text">1. 自动装箱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自动拆箱"><span class="nav-text">2. 自动拆箱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-缓存"><span class="nav-text">3. 缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-的比较"><span class="nav-text">3. ==的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Integer与Integer"><span class="nav-text">1. Integer与Integer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Integer与int"><span class="nav-text">2. Integer与int</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-非new生成的Integer变量和new-Integer-生成的变量"><span class="nav-text">3. 非new生成的Integer变量和new Integer()生成的变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-对于两个非new生成的Integer对象"><span class="nav-text">4. 对于两个非new生成的Integer对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-算术运算"><span class="nav-text">5. 算术运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-常量池中的String"><span class="nav-text">4. 常量池中的String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-静态常量池"><span class="nav-text">1. 静态常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-运行时常量池"><span class="nav-text">2.  运行时常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-String类的intern"><span class="nav-text">3. String类的intern()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-实例比较"><span class="nav-text">4. 实例比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-总结"><span class="nav-text">5. 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-String、StringBuffer-、StringBuilder"><span class="nav-text">6. String、StringBuffer 、StringBuilder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-static加载顺序、执行时机"><span class="nav-text">5.static加载顺序、执行时机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-static代码块执行时机"><span class="nav-text">1. static代码块执行时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-带有static的代码执行顺序"><span class="nav-text">2. 带有static的代码执行顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-如果类还没有被加载"><span class="nav-text">1. 如果类还没有被加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-如果类已经被加载"><span class="nav-text">2. 如果类已经被加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-实例"><span class="nav-text">3. 实例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-基本数据类型和引用类型在JVM中存储在哪"><span class="nav-text">6. 基本数据类型和引用类型在JVM中存储在哪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在方法中声明的变量"><span class="nav-text">1. 在方法中声明的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-在类中声明的变量"><span class="nav-text">2. 在类中声明的变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Java-与-C-的区别"><span class="nav-text">7. Java 与 C++ 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-线程池"><span class="nav-text">8. 线程池</span></a></li></ol></li></ol></div>
             
 
           </div>
