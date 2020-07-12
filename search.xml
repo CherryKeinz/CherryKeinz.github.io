@@ -216,7 +216,7 @@
   <entry>
     <title><![CDATA[Hexo如何在github上备份]]></title>
     <url>%2F2019%2F03%2F24%2FHexo%E6%8D%A2%E7%94%B5%E8%84%91%E8%A6%81%E5%81%9A%E7%9A%84%2F</url>
-    <content type="text"><![CDATA[换机之前的步骤 克隆项目到本地 1git clone 项目 进入项目文件夹，删掉除.git外的所有。 把原来hexo内所有内容复制过来。 创建分支 1git checkout -b hexo 添加add、commit、推送，操作类似普通项目 123git add --allgit commit -m &quot;&quot;git push --set-upstream origin hexo 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 换机之后的步骤 clone到本地 1git clone -b hexo 项目 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 参考文献： https://blog.csdn.net/heimu24/article/details/81210640]]></content>
+    <content type="text"><![CDATA[1. 换机之前的步骤 克隆项目到本地 1git clone 项目 进入项目文件夹，删掉除.git外的所有。 把原来hexo内所有内容复制过来。 创建分支 1git checkout -b hexo 添加add、commit、推送，操作类似普通项目 123git add --allgit commit -m &quot;&quot;git push --set-upstream origin hexo 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 2. 换机之后的步骤 clone到本地 1git clone -b hexo 项目 发布博客和更新 12hexo new post &quot;新文章&quot;hexo d -g git三部曲 123git add . git commit -m &quot;注释&quot; git push origin hexo 参考文献： https://blog.csdn.net/heimu24/article/details/81210640 3. 可能出现的问题1. themes/next无法提交根本原因是next主题也是一个repo。 剪切 themes/next/.git文件夹到其它处 从暂存区删除该文件夹 1git rm --cache themes/next 使用git status查看状态 git三部曲 再移回themes/next/.git文件夹 2. themes/next在git add后在github仍是空新机pull下来后hexo没有页面，原因是旧的themes/next中有.git文件夹，删掉.git后再重新传一下，步骤：git rm --cached themes/next +重新git add themes/next 三部曲。]]></content>
       <categories>
         <category>Hexo</category>
       </categories>

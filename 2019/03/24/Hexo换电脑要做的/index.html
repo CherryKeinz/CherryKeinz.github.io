@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="石头门的选择">
 <meta property="og:description" content="Hexo如何在github上备份，在不同电脑上同步能用到。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-13T03:08:04.084Z">
+<meta property="og:updated_time" content="2020-07-12T12:38:01.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo如何在github上备份">
 <meta name="twitter:description" content="Hexo如何在github上备份，在不同电脑上同步能用到。">
@@ -430,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  180 字
+                  314 字
                 </span>
               
 
@@ -471,7 +471,7 @@
       
 
       
-        <h2 id="换机之前的步骤"><a href="#换机之前的步骤" class="headerlink" title="换机之前的步骤"></a>换机之前的步骤</h2><ol>
+        <h2 id="1-换机之前的步骤"><a href="#1-换机之前的步骤" class="headerlink" title="1. 换机之前的步骤"></a>1. 换机之前的步骤</h2><ol>
 <li><p>克隆项目到本地</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 项目</span><br></pre></td></tr></table></figure>
 </li>
@@ -492,7 +492,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m &quot;注释&quot; </span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="换机之后的步骤"><a href="#换机之后的步骤" class="headerlink" title="换机之后的步骤"></a>换机之后的步骤</h2><ol>
+<h2 id="2-换机之后的步骤"><a href="#2-换机之后的步骤" class="headerlink" title="2. 换机之后的步骤"></a>2. 换机之后的步骤</h2><ol>
 <li><p>clone到本地</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b hexo 项目</span><br></pre></td></tr></table></figure>
 </li>
@@ -505,6 +505,22 @@
 </ol>
 <hr>
 <p>参考文献： <a href="https://blog.csdn.net/heimu24/article/details/81210640" target="_blank" rel="noopener">https://blog.csdn.net/heimu24/article/details/81210640</a></p>
+<h2 id="3-可能出现的问题"><a href="#3-可能出现的问题" class="headerlink" title="3. 可能出现的问题"></a>3. 可能出现的问题</h2><h4 id="1-themes-next无法提交"><a href="#1-themes-next无法提交" class="headerlink" title="1. themes/next无法提交"></a>1. themes/next无法提交</h4><p>根本原因是next主题也是一个repo。</p>
+<ol>
+<li><p>剪切 themes/next/.git文件夹到其它处</p>
+</li>
+<li><p>从暂存区删除该文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache themes/next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用git status查看状态</p>
+</li>
+<li><p>git三部曲</p>
+</li>
+<li><p>再移回themes/next/.git文件夹</p>
+</li>
+</ol>
+<h4 id="2-themes-next在git-add后在github仍是空"><a href="#2-themes-next在git-add后在github仍是空" class="headerlink" title="2. themes/next在git add后在github仍是空"></a>2. themes/next在git add后在github仍是空</h4><p>新机pull下来后hexo没有页面，原因是旧的themes/next中有.git文件夹，删掉.git后再重新传一下，步骤：<code>git rm --cached themes/next</code></p>
+<p>+重新<code>git add themes/next</code> 三部曲。</p>
 
       
     </div>
@@ -715,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#换机之前的步骤"><span class="nav-text">换机之前的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换机之后的步骤"><span class="nav-text">换机之后的步骤</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-换机之前的步骤"><span class="nav-text">1. 换机之前的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-换机之后的步骤"><span class="nav-text">2. 换机之后的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-可能出现的问题"><span class="nav-text">3. 可能出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-themes-next无法提交"><span class="nav-text">1. themes/next无法提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-themes-next在git-add后在github仍是空"><span class="nav-text">2. themes/next在git add后在github仍是空</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -735,7 +751,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
